@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preload" as="image" href="/textures/paper-texture.webp" type="image/webp" fetchpriority="high" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="/favico.png" />
+  <link rel="apple-touch-icon" href="/favico.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fafafa" />
+
+  <title>Samant Rathod (SAMFIP) | 3D Portfolio</title>
+  <meta name="description"
+    content="Interactive 3D portfolio of Samant Rathod: software engineer working on distributed systems, DevOps and backend." />
+  <meta name="author" content="Samant Rathod" />
+
+  <!-- Google Fonts: Hand-drawn + Primary -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Gloria+Hallelujah&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Preload bazowych tekstur używanych w preloaderze -->
+
+  <style>
+    /* Absolute SEO text hiding - completely accessible to Googlebot, invisible to users */
+    .sr-only-seo {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Plain-text fallback for screen readers (the 3D scene is a canvas) -->
+  <div id="seo-content" class="sr-only-seo">
+    <h1>Samant Rathod (SAMFIP) | Software Engineer</h1>
+    <p>B.Tech Computer Science &amp; Engineering at Pandit Deendayal Energy University (CGPA 8.63). Research Intern at IIT Hyderabad; previously SDE Intern at Heizen and Enerpac.</p>
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/samfip1/FipLive">FipLive</a>: distributed real-time live-streaming platform (Go, Kafka, gRPC, Kubernetes, Terraform)</li>
+      <li><a href="https://github.com/samfip1/dynamo-log-report">Linux Forensics Lab-in-a-Box</a> (OpenTofu, Ansible, Linode, Nginx)</li>
+      <li><a href="https://github.com/samfip1/BattleShip">3D Naval Combat Simulation</a> (JavaScript, Three.js)</li>
+      <li><a href="https://kala-setu-phi.vercel.app/">Kala Setu artist marketplace</a> (React, Node.js, TypeScript, Razorpay, Redis)</li>
+      <li><a href="https://github.com/samfip1/paytm-Advanced">Secure Digital Wallet</a> (MySQL, Node.js, React)</li>
+      <li><a href="https://github.com/samfip1/online-music-player-system">Collaborative Music Player</a> (React, Prisma, TypeScript)</li>
+    </ul>
+    <h2>Contact</h2>
+    <p><a href="mailto:samantrathod6@gmail.com">samantrathod6@gmail.com</a> · <a href="https://www.linkedin.com/in/samantrathod/">LinkedIn</a> · <a href="https://github.com/samfip1">GitHub</a></p>
+  </div>
+
+  <!-- Noscript strict fallback -->
+  <noscript>
+    Please enable JavaScript to explore the interactive 3D portfolio of Samant Rathod.
+  </noscript>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
