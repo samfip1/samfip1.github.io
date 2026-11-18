@@ -141,8 +141,8 @@ const AwardButton = ({ onClick, texture, paintedTexture, width, height, position
 };
 
 // Story milestones configuration
-// Each milestone appears once per "story cycle" (7 chunks = 280 units)
-const STORY_CYCLE_LENGTH = 280; // intro, awards, journey, 3 internships, skills - 40 units apart
+// Each milestone appears once per "story cycle" (8 chunks = 320 units)
+const STORY_CYCLE_LENGTH = 320; // intro, awards, journey, 4 internships, skills - 40 units apart
 
 // === TWARDA LINIA ZANIKANIA DLA MILESTONES (WORLD SPACE) ===
 // Pokój About jest na Z = -25, więc -25 to drzwi pokoju
@@ -244,7 +244,7 @@ const InfiniteSkyManager = ({ scrollProgressRef }) => {
                     {/* === INTERNSHIP MILESTONES (one island each) === */}
                     {INTERNSHIPS.map((job, i) => (
                         <InternshipMilestone
-                            key={job.company}
+                            key={`${job.company}-${job.place}`}
                             job={job}
                             side={i % 2 === 0 ? -1 : 1}
                             z={-(cycleIndex * STORY_CYCLE_LENGTH + 135 + i * 40)}
@@ -254,7 +254,7 @@ const InfiniteSkyManager = ({ scrollProgressRef }) => {
 
                     {/* === SKILLS MILESTONE === */}
                     <SkillsMilestone
-                        z={-(cycleIndex * STORY_CYCLE_LENGTH + 255)}
+                        z={-(cycleIndex * STORY_CYCLE_LENGTH + 135 + INTERNSHIPS.length * 40)}
                         scrollProgressRef={scrollProgressRef}
                     />
                 </group>
@@ -455,7 +455,6 @@ const AWARDS_DATA = {
         layout: 'certificate_grid',
         title: 'Other Achievements',
         items: [
-            { label: 'National Level Project Showcase', date: 'FENCE-UI, built with the Indian Army' },
             { label: 'Encode Technical Committee', date: 'Member, led technical initiatives' },
             { label: 'University Basketball', date: 'Represented PDEU in tournaments' },
         ],
@@ -1015,12 +1014,26 @@ const INTERNSHIPS = [
     {
         company: 'IIT HYDERABAD',
         role: 'Research Intern',
-        place: 'Hyderabad',
+        place: 'Defen.do Cyber Range · CCS',
         dates: 'JUN 2026-NOW',
         points: [
-            'MLOps VS Code extension: local open-source models for RAG, multi-model routing and load balancing on a Slurm H100 cluster',
-            'Nano Cyber Range for 100 concurrent students with RBAC, automated evaluation and secure tab-locking',
-            'FENCE appliance: Django web UI for DNS, NAT/firewall, FreeRADIUS and WireGuard, with LDAP/SQLite auth',
+            'Defen.do: browser cyber range with Kali labs over noVNC and a VM per student on Linode or the CCS OpenStack cloud',
+            'GradeBot grades every lab from outside the VM over SSH, with tamper-proof, per-student checks',
+            'Two-machine labs, instructor lab authoring, live quizzes (Socket.io), LDAP login and multi-role RBAC',
+            'Built for 100 concurrent students; designing the TCS iON integration for the IITH certificate programme',
+        ],
+    },
+    {
+        company: 'IIT HYDERABAD',
+        role: 'Research Intern',
+        place: 'Systems Security · CCS',
+        dates: 'JUN 2026-NOW',
+        points: [
+            'Polyglott OS (PolyOS), a security-focused Debian OS: built its website polyos.org with ISO downloads and APT repo setup',
+            'Keylime web UI for PolyOS remote attestation: Rust (Axum) + React, admin login and a TPM EK whitelist',
+            'FENCE appliance: Django UI for DNS, NAT/firewall, FreeRADIUS and WireGuard, with LDAP/SQLite auth',
+            'Rebuilt the CCS-IITH website as a static Astro site with validated YAML content',
+            'MLOps VS Code extension: local LLMs for RAG with multi-model routing on a Slurm H100 cluster',
         ],
     },
 ];

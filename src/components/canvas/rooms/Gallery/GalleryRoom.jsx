@@ -38,6 +38,31 @@ export const GALLERY_INTERACTION_AUDIO_SETTINGS = {
 // techStack: up to 4 entries (one per box on the card back) - a logo path, or a plain name drawn as text.
 const FALLBACK_PROJECTS = [
     {
+        id: 'defendo',
+        title: 'DEFEN.DO',
+        front: '/textures/gallery/defendoprzod.webp',
+        painted: '/textures/gallery/defendoprzod_painted.webp',
+        description: 'Cyber range built at CCS, IIT Hyderabad. Students get Kali labs in the browser on their own Linode or OpenStack VMs, and GradeBot grades every task over SSH from outside the lab. No public link: internal to IITH.',
+        techStack: ['/textures/gallery/reactlogo.webp', 'Node.js', 'OpenStack', 'Postgres']
+    },
+    {
+        id: 'keylime',
+        title: 'KEYLIME UI',
+        front: '/textures/gallery/keylimeprzod.webp',
+        painted: '/textures/gallery/keylimeprzod_painted.webp',
+        description: 'Web UI for remote attestation of PolyOS devices at CCS, IIT Hyderabad, built on keylime-webtool. Added admin login with expiring JWTs, a TPM EK whitelist and the live Keylime integration. Internal to IITH.',
+        techStack: ['Rust', 'Axum', '/textures/gallery/reactlogo.webp', 'TPM']
+    },
+    {
+        id: 'polyglott',
+        title: 'POLYGLOTT OS',
+        front: '/textures/gallery/polyglottprzod.webp',
+        painted: '/textures/gallery/polyglottprzod_painted.webp',
+        url: 'https://polyos.org',
+        description: 'Polyglott OS (PolyOS) is a security-focused, Debian-based OS from CCS, IIT Hyderabad. I built its website, polyos.org: the ISO download table with checksums (generated from a data file) and the APT repository setup page.',
+        techStack: ['Astro', 'Node.js', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp']
+    },
+    {
         id: 'fiplive',
         title: 'FIPLIVE',
         front: '/textures/gallery/fipliveprzod.webp',
@@ -93,7 +118,7 @@ const FALLBACK_PROJECTS = [
     },
 ];
 
-const PROJECT_COUNT = 12; // Multiple of the project count so the infinite loop repeats cleanly
+const PROJECT_COUNT = 18; // Multiple of the project count so the infinite loop repeats cleanly
 const GAP = 2.5;
 
 // Zmień te wartości aby dopasować proporcje ptaka (legacy ratio 1.41)
@@ -1165,6 +1190,7 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                 {/* === PRZYCISK: OPEN NA PLECACH KARTKI === */}
                 <group
                     ref={buttonGroupRef}
+                    visible={!!project.url}
                     position={[0, 0.75, 0]}
                     rotation={[Math.PI, 0, 0]}
                 >
@@ -1196,13 +1222,13 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                     <mesh
                         position={[0, 0, 0.02]}
                         onClick={(e) => {
-                            if (isSelected && !isTransitioning) {
+                            if (project.url && isSelected && !isTransitioning) {
                                 e.stopPropagation();
                                 window.open(project.url, '_blank');
                             }
                         }}
                         onPointerEnter={(e) => {
-                            if (isSelected && !isTransitioning) {
+                            if (project.url && isSelected && !isTransitioning) {
                                 e.stopPropagation();
                                 setBtnHovered(true);
                             }

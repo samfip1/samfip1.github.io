@@ -138,6 +138,9 @@ export const GALLERY_TEXTURES_VERSIONED = [
     // Project cards
     'fipliveprzod',
     'forensicsprzod',
+    'defendoprzod',
+    'keylimeprzod',
+    'polyglottprzod',
     'navalprzod',
     'kalasetuprzod',
     'walletprzod',

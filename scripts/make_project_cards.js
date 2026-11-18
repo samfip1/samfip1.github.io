@@ -7,6 +7,9 @@ const PANEL = { left: 126, top: 610, width: 776, height: 1286 }; // inner box of
 const PAINTED_PANEL = { ...PANEL, left: 124, width: 788 }; // painted screenshot bleeds a bit wider
 
 const CARDS = [
+    ['defendo', 'Defen.do Cyber Range.\n\nKali labs in the browser, a VM per student, graded live by GradeBot. CCS, IIT Hyderabad.', 'React · Node · Postgres\nLinode · OpenStack'],
+    ['keylime', 'Keylime Web UI.\n\nRemote attestation dashboard for PolyOS devices, with login and a TPM EK whitelist.', 'Rust · Axum\nReact · TypeScript'],
+    ['polyglott', 'Polyglott OS.\n\nWebsite for CCS IITH\'s security-focused Debian OS: ISO downloads and APT repo setup.', 'Astro · Node.js\nHTML · CSS'],
     ['fiplive', 'Distributed real-time live streaming.\n\nA mini Twitch + Kahoot: chat, polls, paid events and VOD for 10,000 viewers.', 'Go · Kafka · gRPC\nRedis · LiveKit · K8s'],
     ['forensics', 'Linux Forensics\nLab-in-a-Box.\n\nOne-command lab environments for the NFSU / ISEA faculty program.', 'OpenTofu · Ansible\nLinode · Nginx'],
     ['naval', '3D Naval Combat.\n\nA 60 FPS browser game with physics-based water shaders and AABB collisions.', 'JavaScript\nThree.js'],

@@ -26,7 +26,7 @@ export const AUDIO_SETTINGS = {
 // Using CHUNK_LENGTH to create looping story (every ~40 units restarts)
 const STORY_MILESTONES = [
     { id: 'intro', position: [0, 0, -15], type: 'intro', title: 'SAMFIP', subtitle: '< software engineer />' },
-    { id: 'awards', position: [0, 0, -55], type: 'awards', title: 'AWARDS', subtitle: 'National Level Showcase • LeetCode Knight' },
+    { id: 'awards', position: [0, 0, -55], type: 'awards', title: 'AWARDS', subtitle: 'LeetCode Knight • CodeChef 3-Star' },
     { id: 'journey', position: [0, 0, -95], type: 'journey', title: 'JOURNEY', subtitle: 'B.Tech CSE @ PDEU • Research Intern @ IIT Hyderabad' },
     { id: 'skills', position: [0, 0, -135], type: 'skills', title: 'SKILLS', subtitle: 'Go • Python • Docker • Kafka • Terraform' },
 ];
